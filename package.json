@@ -1,6 +1,6 @@
 {
   "name": "@donutteam/environment-variable-utilities",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A collection of various environment variable related utility functions.",
   "main": "./index.js",
   "scripts": {
