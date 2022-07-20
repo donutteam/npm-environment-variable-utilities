@@ -11,15 +11,19 @@
  */
 export function checkEnvironmentVariables(variableNames)
 {
+	let numMissing = 0;
+
 	for (const variableName of variableNames)
 	{
+		console.error(`[CheckEnvironmentVariables] Missing variable: ${ variableName }`);
+
 		if (process.env[ variableName ] == undefined)
 		{
-			return false;
+			numMissing += 1;
 		}
 	}
 
-	return true;
+	return numMissing == 0;
 }
 
 /**
@@ -32,8 +36,6 @@ export function requireEnvironmentVariables(variableNames)
 {
 	if (!checkEnvironmentVariables(variableNames))
 	{
-		console.error(`[RequireEnvironmentVariables] Missing variable: ${ variableName }`);
-
 		process.exit(1);
 	}
 
