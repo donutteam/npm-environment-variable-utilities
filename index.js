@@ -15,10 +15,10 @@ export function checkEnvironmentVariables(variableNames)
 
 	for (const variableName of variableNames)
 	{
-		console.error(`[CheckEnvironmentVariables] Missing variable: ${ variableName }`);
-
 		if (process.env[ variableName ] == undefined)
 		{
+			console.error(`[CheckEnvironmentVariables] Missing variable: ${ variableName }`);
+			
 			numMissing += 1;
 		}
 	}
