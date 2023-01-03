@@ -3,13 +3,13 @@
 //
 
 /**
- * Checks if all of the given variable names are specified.
+ * Checks if all of the given environment variable names are defined.
  * 
- * @param {Array<String>} variableNames An array of variable names that should be checked.
- * @returns {Boolean} Whether or not all of the variables existed.
+ * @param variableNames An array of variable names that should be checked.
+ * @returns Whether all the specified variable names are defined.
  * @author Loren Goodwin
  */
-export function checkEnvironmentVariables(variableNames)
+export function checkEnvironmentVariables(variableNames : string[]) : boolean
 {
 	let numMissing = 0;
 
@@ -29,10 +29,10 @@ export function checkEnvironmentVariables(variableNames)
 /**
  * Requires that all of the given environment variable names exist and terminates the process if they don't.
  * 
- * @param {Array<String>} variableNames An array of variable names that are required for this process to work.
+ * @param variableNames An array of variable names that are required for this process to work.
  * @author Loren Goodwin
  */
-export function requireEnvironmentVariables(variableNames)
+export function requireEnvironmentVariables(variableNames : string[])
 {
 	if (!checkEnvironmentVariables(variableNames))
 	{
